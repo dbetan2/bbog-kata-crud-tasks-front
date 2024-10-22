@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "bbog-kata-crud-tasks-front:build:production"
+              "buildTarget": "bbog-kata-crud-tasks-front:build:production"
             },
             "development": {
-              "browserTarget": "bbog-kata-crud-tasks-front:build:development"
+              "buildTarget": "bbog-kata-crud-tasks-front:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "bbog-kata-crud-tasks-front:build"
+            "buildTarget": "bbog-kata-crud-tasks-front:build"
           }
         },
         "test": {
