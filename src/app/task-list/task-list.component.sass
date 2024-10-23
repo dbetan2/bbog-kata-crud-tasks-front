@@ -3,32 +3,116 @@ $card-border-color: #ddd
 $card-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
 $gap: 16px
 $hover-scale: 1.02
+$primary-color: #000000
+$success-color: #2ecc71
+$error-color: #e74c3c
+$priority-high: #e74c3c
+$priority-low: #2ecc71
+
+
+.task-list-title
+  font-size: 1.8rem
+  color: $primary-color
+  text-align: center
+  margin-bottom: 24px
+
 
 .task-list
-    list-style-type: none
-    padding: 0
-    display: flex
-    flex-wrap: wrap
-    gap: $gap
+  list-style-type: none
+  padding: 0
+  display: flex
+  flex-wrap: wrap
+  gap: $gap
+  justify-content: center
+
+
 
 .task-card
-    background-color: $card-bg-color
-    border: 1px solid $card-border-color
-    border-radius: 8px
-    padding: 16px
-    margin: 3%
-    margin-bottom: 5%
-    box-shadow: $card-shadow
-    width: calc(33% - $gap)
-    box-sizing: border-box
-    transition: transform 0.2s
+  background-color: $card-bg-color
+  border: 1px solid $card-border-color
+  border-radius: 12px
+  padding: 16px
+  margin: 3%
+  margin-bottom: 5%
+  box-shadow: $card-shadow
+  width: calc(33% - $gap)
+  box-sizing: border-box
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s
 
-    &:hover
-        transform: scale($hover-scale)
+  &:hover
+    transform: scale($hover-scale)
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15)
+  
 
-    .task-actions
-        margin-top: 12px
+  .task-title
+    font-size: 1.25rem
+    font-weight: bold
+    color: #333
+    margin-bottom: 8px
+  
+
+  .task-description
+    font-size: 1rem
+    color: #666
+    margin-bottom: 12px
+  
+
+  .task-due-date
+    font-size: 0.9rem
+    color: $primary-color
+    margin-bottom: 12px
+  
+
+  .task-priority
+    font-size: 0.9rem
+    font-weight: bold
+    color: #333
+
+    .priority-high
+      color: $priority-high
+    
+
+    .priority-low
+      color: $priority-low
+    
+  
+
+  .task-actions
+    display: flex
+    justify-content: flex-end
+    gap: 12px
+    margin-top: 12px
 
     .ico-write-edit,
     .ico-delete
-        cursor: pointer
+      cursor: pointer
+      font-size: 1.2rem
+      transition: color 0.2s ease
+
+      &:hover
+        color: $primary-color
+      
+
+      &.ico-delete:hover
+        color: $error-color
+      
+    
+  
+
+
+
+@media (max-width: 768px)
+  .task-card
+    width: calc(50% - $gap)
+  
+
+
+@media (max-width: 480px)
+  .task-card
+    width: calc(100% - $gap)
+  
+
+  .task-list-title
+    font-size: 1.5rem
+  
+

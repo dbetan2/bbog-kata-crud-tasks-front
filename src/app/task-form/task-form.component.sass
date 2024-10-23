@@ -1,23 +1,65 @@
 .container
-    margin: 2% 10%
+  margin: 2% 10%
+
+  @media (max-width: 576px)
+    margin: 2% 5%
+  
+
 
 .element-container
-    margin-top: 3%
+  margin-top: 3%
+
+  @media (max-width: 576px)
+    margin-top: 2%
+  
+
 
 .label-text
-    font-size: 0.875rem
-    line-height: 1.75rem
-    color: #444444
-    margin-right: 20px
+  font-size: 0.875rem
+  line-height: 1.75rem
+  color: #444444
+  margin-right: 20px
+
+  @media (max-width: 576px)
+    font-size: 0.75rem
+    margin-right: 10px
+  
+
 
 .second-container
-    display: flex
-    margin: 3%
-    justify-content: space-around
+  display: flex
+  margin: 3%
+  justify-content: space-around
+
+  @media (max-width: 576px)
+    flex-direction: column
+    align-items: flex-start
+    margin: 3% 0
+  
+
+  @media (min-width: 577px) and (max-width: 768px)
+    flex-direction: row
+    justify-content: space-between
+  
+
 
 .due-date
-    margin-right: 20px
-    font-size: 20px
-    color: #444444
-    border-radius: 10px
-    border: solid 1px #b1b0b0
+  margin-right: 20px
+  font-size: 20px
+  color: #444444
+  border-radius: 10px
+  border: solid 1px #b1b0b0
+
+  @media (max-width: 576px)
+    margin-right: 0
+    font-size: 16px
+  
+
+
+.sp-at-btn
+  @media (max-width: 576px)
+    width: 100%
+    font-size: 1rem
+    padding: 12px
+  
+
