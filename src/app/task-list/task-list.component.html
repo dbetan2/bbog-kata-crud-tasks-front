@@ -1,0 +1,42 @@
+<div>
+  <h3>Lista de Tareas</h3>
+  <ul class="task-list">
+    @for (task of tasks; track tasks; let idx = $index) {
+    <li class="task-card">
+      <h4>{{ task.title }}</h4>
+      <p>{{ task.description }}</p>
+      <p>Vencimiento: {{ task.dueDate }}</p>
+      <p>Prioridad: {{ task.priority }}</p>
+      <div class="task-actions">
+        <span (click)="updateTask(idx, task)" class="ico-write-edit"></span>
+        <span (click)="deleteTask(idx, task.id)" class="ico-delete"></span>
+      </div>
+    </li>
+    }
+  </ul>
+</div>
+
+<sp-ml-modal
+  #successModal
+  is-close
+  icon="success"
+  title-modal="¡Muy bien!"
+  sub-title="Manos a la obra. La tarea ha sido actualizada"
+  options-buttons='[{"id":"0","value":"Continuar"}]'
+></sp-ml-modal>
+<sp-ml-modal
+  #deleteSuccessModal
+  is-close
+  icon="success"
+  title-modal="¡Muy bien!"
+  sub-title="Todo todito todo, ha sido borrado"
+  options-buttons='[{"id":"0","value":"Continuar"}]'
+></sp-ml-modal>
+<sp-ml-modal
+  #errorModal
+  is-close
+  icon="error"
+  title-modal="¡Ups!"
+  sub-title="Algo ha fallado. Intenta nuevamente"
+  options-buttons='[{"id":"0","value":"Continuar"}]'
+></sp-ml-modal>

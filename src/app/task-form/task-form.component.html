@@ -1,0 +1,91 @@
+@if (IsTaskUpdating) {
+  <div class="container">
+    <div class="element-container">
+      <sp-at-input
+        #taskName
+        label="Nombre de la tarea"
+        message=""
+        placeholder="Practicar inglés"
+        type="TEXT"
+        status="ENABLED"
+        required="true"
+      ></sp-at-input>
+    </div>
+    <div class="element-container">
+      <sp-at-input
+        #taskDescription
+        label="Descripción"
+        message=""
+        placeholder="Practicar mi inglés durante 30 minutos"
+        type="TEXT"
+        status="ENABLED"
+        required="true"
+      ></sp-at-input>
+    </div>
+    <div class="second-container">
+      <label class="label-text" for="priority">Vencimiento</label>
+      <input #taskDueDate name="due-date" type="date" class="due-date" required />
+      <label class="label-text" for="priority">Prioridad</label>
+      <sp-at-radio-button
+        #taskPriority
+        is-horizontal="true"
+        margin-left="24px"
+        required
+        values-to-radio='[{ "label":"Alta", "value": "high", "isChecked": "false"}, { "label":"Baja", "value": "low", "isChecked": "false"}]'
+        (radioEmitter)="radioSelected($event)"
+      ></sp-at-radio-button>
+    </div>
+    <button
+      type="submit"
+      class="sp-at-btn sp-at-btn--primary sp-at-btn--lg"
+      (click)="updateTask()"
+    >
+      Actualizar tarea<span>›</span>
+    </button>
+  </div>  
+} @else {
+<div class="container">
+  <div class="element-container">
+    <sp-at-input
+      #taskName
+      label="Nombre de la tarea"
+      message=""
+      placeholder="Practicar inglés"
+      type="TEXT"
+      status="ENABLED"
+      required="true"
+    ></sp-at-input>
+  </div>
+  <div class="element-container">
+    <sp-at-input
+      #taskDescription
+      label="Descripción"
+      message=""
+      placeholder="Practicar mi inglés durante 30 minutos"
+      type="TEXT"
+      status="ENABLED"
+      required="true"
+    ></sp-at-input>
+  </div>
+  <div class="second-container">
+    <label class="label-text" for="priority">Vencimiento</label>
+    <input #taskDueDate name="due-date" type="date" class="due-date" required />
+    <label class="label-text" for="priority">Prioridad</label>
+    <sp-at-radio-button
+      #taskPriority
+      is-horizontal="true"
+      margin-left="24px"
+      required
+      values-to-radio='[{ "label":"Alta", "value": "high", "isChecked": "false"}, { "label":"Baja", "value": "low", "isChecked": "false"}]'
+      (radioEmitter)="radioSelected($event)"
+    ></sp-at-radio-button>
+  </div>
+  <button
+    type="submit"
+    class="sp-at-btn sp-at-btn--primary sp-at-btn--lg"
+    (click)="createTask()"
+  >
+    Crear tarea<span>›</span>
+  </button>
+</div>
+}
